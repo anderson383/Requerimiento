@@ -33,6 +33,11 @@ namespace Requerimiento
                 lblCorreo.Text = correo;
                 fecha = (string)Session["fecha"];
                 lblFecha.Text = fecha;
+                lblPersona.Text = (string)Session["tipo"];
+        }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
 
         }
     }

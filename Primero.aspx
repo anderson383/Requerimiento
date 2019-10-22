@@ -20,6 +20,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <asp:Label ID="Label1" runat="server" Text="Documento de identidad"></asp:Label>
+
                     <asp:TextBox ID="txtDocumento" runat="server" class="form-control"></asp:TextBox>
                     <asp:Label ID="Label2" runat="server" Text="Nombre"></asp:Label>
                     <asp:TextBox ID="txtNombre" runat="server" class="form-control"></asp:TextBox>
@@ -27,7 +28,8 @@
                     <asp:TextBox ID="txtApellido" runat="server" class="form-control"></asp:TextBox>
                     <asp:Label ID="Label4" runat="server" Text="Direccion"></asp:Label>
                     <asp:TextBox ID="txtDireccion" runat="server" class="form-control"></asp:TextBox>
-                    <asp:Button ID="btnEnviar" runat="server" Text="Enviar" class="btn btn-primary m-2 btn-block" OnClick="btnEnviar_Click"/>
+                    <asp:RadioButton ID="rbNatural" runat="server" GroupName="caja" Text="Natural"/>
+                    <asp:RadioButton ID="rbJuridica" runat="server" GroupName="caja" Text="Juridica" />
                 </div>
 
                 <div class="col-lg-6">
@@ -46,6 +48,12 @@
                         <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
                         <WeekendDayStyle BackColor="#CCCCFF" />
                     </asp:Calendar>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                     <asp:Button ID="btnEnviar" runat="server" Text="Enviar" class="btn btn-primary m-2 btn-block" OnClick="btnEnviar_Click"/>
+                     <asp:Button ID="btnLimiar" runat="server" Text="Limpiar campos" CssClass="btn btn-danger btn-block mt-2" OnClick="btnLimiar_Click" />
                 </div>
             </div>
         </div>

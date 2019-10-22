@@ -29,14 +29,32 @@ namespace Requerimiento
             //Session["documento"] = "sadadasdfsdf";
 
 
-             Session["documento"] = txtDocumento.Text;
-             Session["nombre"] = txtNombre.Text;
-             Session["apellido"] = txtApellido.Text;
-             Session["direccion"] = txtDireccion.Text;
-             Session["telefono"] =txtTelefono.Text;
-             Session["correo"] =txtCorreo.Text;
-             Session["fecha"] = idCalendario.SelectedDate.ToString();
+            Session["documento"] = txtDocumento.Text;
+            Session["nombre"] = txtNombre.Text;
+            Session["apellido"] = txtApellido.Text;
+            Session["direccion"] = txtDireccion.Text;
+            Session["telefono"] =txtTelefono.Text;
+            Session["correo"] =txtCorreo.Text;
+            Session["fecha"] = idCalendario.SelectedDate.ToString();
+            if (rbNatural.Checked == true)
+            {
+                Session["tipo"] = "Persona Natural";
+            }
+            if(rbJuridica.Checked == true)
+            {
+                Session["tipo"] = "Persona Juridica";
+            }
              Response.Redirect("Segundo.aspx");
+        }
+
+        protected void btnLimiar_Click(object sender, EventArgs e)
+        {
+            txtDocumento.Text = "";
+            txtNombre.Text ="";
+            txtApellido.Text ="";
+            txtDireccion.Text ="";
+            txtTelefono.Text ="";
+            txtCorreo.Text ="";
         }
     }
 }
