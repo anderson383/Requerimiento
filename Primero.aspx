@@ -30,6 +30,7 @@
                     <asp:TextBox ID="txtDireccion" runat="server" class="form-control"></asp:TextBox>
                     <asp:RadioButton ID="rbNatural" runat="server" GroupName="caja" Text="Natural"/>
                     <asp:RadioButton ID="rbJuridica" runat="server" GroupName="caja" Text="Juridica" />
+                    <asp:DropDownList ID="listaUno" runat="server" OnSelectedIndexChanged="dropList_SelectedIndexChanged"></asp:DropDownList>
                 </div>
 
                 <div class="col-lg-6">

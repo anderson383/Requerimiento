@@ -34,6 +34,7 @@ namespace Requerimiento
                 fecha = (string)Session["fecha"];
                 lblFecha.Text = fecha;
                 lblPersona.Text = (string)Session["tipo"];
+                lblCiudad.Text = (string)Session["lista"];
         }
 
         protected void btnVolver_Click(object sender, EventArgs e)

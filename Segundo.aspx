@@ -26,6 +26,8 @@
                 <br />
                 <asp:Label ID="lblFecha" runat="server" Text=""></asp:Label>
                 <br />
+                <asp:Label ID="lblCiudad" runat="server" Text=""></asp:Label>
+                <br />
                 <asp:Label ID="lblPersona" runat="server" Text=""></asp:Label>
                 <br />
                 <asp:Button ID="btnVolver" runat="server" Text="Volver" class="btn btn-block btn-info" PostBackUrl="~/Primero.aspx"/>

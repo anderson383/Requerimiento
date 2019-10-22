@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace Requerimiento
 {
@@ -18,9 +19,16 @@ namespace Requerimiento
         private static DateTime fecha;
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
             if (!IsPostBack)
             {
-
+                DataSet set = new DataSet();
+                set.ReadXml(Server.MapPath("datos.xml"));
+                listaUno.DataSource = set;
+                listaUno.DataValueField = "id";
+                listaUno.DataTextField = "nombreciudad";
+                listaUno.DataBind();
             }
         }
 
@@ -44,7 +52,8 @@ namespace Requerimiento
             {
                 Session["tipo"] = "Persona Juridica";
             }
-             Response.Redirect("Segundo.aspx");
+            Session["lista"] = listaUno.SelectedItem.ToString();
+            Response.Redirect("Segundo.aspx");
         }
 
         protected void btnLimiar_Click(object sender, EventArgs e)
@@ -55,6 +64,11 @@ namespace Requerimiento
             txtDireccion.Text ="";
             txtTelefono.Text ="";
             txtCorreo.Text ="";
+        }
+
+        protected void dropList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
